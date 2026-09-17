@@ -22,6 +22,9 @@ def get_valid_input():
 def process_delivery(current_total, new_value):
     return current_total + new_value
 
+def calculate_tax(amount):
+    return amount * 0.1
+
 while True:
     result = get_valid_input()
     if result == "quit":
@@ -31,11 +34,13 @@ while True:
         fail_count += 1
     else: 
         quantity = process_delivery(quantity, result)
+        tax = calculate_tax(result)
         if quantity>=500:
             print("You have exceed 500 units limt:",quantity)
             break
         else:
             print("Total quantity in stock:", quantity)
+            print("Tax:", f"${tax:.2f}")
    
     
   
