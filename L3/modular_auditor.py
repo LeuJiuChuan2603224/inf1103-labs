@@ -1,7 +1,7 @@
 inventory = 0
 quantity = 0
 fail_count = 0
-enter_quantity = ""
+
 
 def get_valid_input():
     enter_quantity = input("Enter the quantity of stock: ")
@@ -19,18 +19,23 @@ def get_valid_input():
       print("Invalid input. Please enter a number or 'quit' to exit.")   
       return None
 
+def process_delivery(current_total, new_value):
+    return current_total + new_value
+
 while True:
-    entered_quantity = get_valid_input()
-    if entered_quantity == "quit":
+    result = get_valid_input()
+    if result == "quit":
         print("Thank You and Have A Nice Day!")
         break
-    elif entered_quantity is None:
+    elif result is None:
         fail_count += 1
     else: 
-     
+        quantity = process_delivery(quantity, result)
         if quantity>=500:
             print("You have exceed 500 units limt:",quantity)
             break
+        else:
+            print("Total quantity in stock:", quantity)
    
     
   
