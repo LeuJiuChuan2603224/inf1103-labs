@@ -1,6 +1,22 @@
-inventory = 0
-quantity = 0
-fail_count = 0
+FILENAME = "inventory.txt"
+
+def load_inventory(file):
+    total=0
+    history=[]
+    file=open("inventory.txt", "a")
+    file.close()
+
+    with open("inventory.txt", "r") as file:
+        data = file.readlines()
+ 
+        if len(data) >= 1 and data[0].strip() != "":
+            total = int(data[0].strip())
+ 
+        if len(data) >= 2 and data[1].strip() != "":
+            history = [int(item) for item in data[1].strip().split(",")]
+ 
+    print(f"Inventory loaded. Starting total: {total}")
+    return total, history
 
 
 def get_valid_input():
@@ -29,6 +45,9 @@ def generate_report(total_units, failed_attempts):
     print("Total quantity in stock:", total_units)
     print("Failed attempts:", failed_attempts)
 
+
+quantity, transaction_history = load_inventory('inventory.txt')
+fail_count = 0
 while True:
     result = get_valid_input()
     if result == "quit":
