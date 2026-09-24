@@ -59,6 +59,7 @@ while True:
         generate_report(quantity,fail_count)
     else: 
         quantity = process_delivery(quantity, result)
+        transaction_history.append(result)
         tax = calculate_tax(result)
         if quantity>=500:
             print("You have exceed 500 units limt:",quantity)
@@ -66,7 +67,7 @@ while True:
         else:
             generate_report(quantity,fail_count)
             print("Tax:", f"${tax:.2f}")
-   
+            print("Transaction history so far:", transaction_history)
     
   
 
