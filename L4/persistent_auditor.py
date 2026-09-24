@@ -18,6 +18,12 @@ def load_inventory(file):
     print(f"Inventory loaded. Starting total: {total}")
     return total, history
 
+def save_inventory(file, total, history):
+    with open(file, "w") as file:
+        file.write(str(total) + "\n")
+        file.write(",".join(map(str, history)) + "\n")
+    print("Inventory saved.")
+
 
 def get_valid_input():
     enter_quantity = input("Enter the quantity of stock: ")
@@ -52,6 +58,7 @@ while True:
     result = get_valid_input()
     if result == "quit":
         generate_report(quantity,fail_count)
+        save_inventory(FILENAME, quantity, transaction_history)
         print("Thank You and Have A Nice Day!")
         break
     elif result is None:
