@@ -10,5 +10,11 @@
         "name": "Mouse",
         "price": 34.0,
         "stock": 22
+    },
+    {
+        "id": "P003",
+        "name": "Test",
+        "price": 22.0,
+        "stock": 33
     }
 ]
