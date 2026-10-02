@@ -40,6 +40,17 @@ def update_stock(inventory):
             return
     print("Product not found.")
 
+"""Option4"""
+def search_product(inventory):
+    product_id = input("Enter Product ID to search: ")
+    for product in inventory:
+        if product["id"] == product_id:
+            print("\nProduct Found:")
+            print("-" * 40)
+            print(f"ID: {product['id']}\nName: {product['name']}\nPrice: ${product['price']:.2f}\nStock: {product['stock']}")
+            print("-" * 40)
+            return
+    print("Product not found.")
 def menu():
     print("-" * 10 + "Menu" + "-" * 10)
     print("1. Display All Products")
@@ -61,7 +72,7 @@ while True:
     elif choice == "3":
          update_stock(inventory)
     elif choice == "4":
-         False
+        search_product(inventory)
     elif choice == "5":
         False
     elif choice == "6":
