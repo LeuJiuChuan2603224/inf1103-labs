@@ -1,7 +1,7 @@
-print("=======================")
-print("Welcome here")
-print("My first post!")
-print("=======================")
+# print("=======================")
+# print("Welcome here")
+# print("My first post!")
+# print("=======================")
 
 # username = "cool_creator"
 # bio = "Fun Blogger"
@@ -20,15 +20,20 @@ print("=======================")
 # print("Bio:", bio)
 # print("Followers:", followers)
 
-username = input("Enter Username: ")
-age =int( input("Enter Age: "))
-category = input("Enter Content Category: ")
+# username = input("Enter Username: ")
+# age =int( input("Enter Age: "))
+# category = input("Enter Content Category: ")
 
-print("\nInstagram Profile")
-print("=======================")
-print("Username:", username)
-print("Age:", age)
-print("Content Category:", category)
+# print("\nInstagram Profile")
+# print("=======================")
+# print("Username:", username)
+# print("Age:", age)
+# print("Content Category:", category)
 
-if age>40 and category=="fun":
-    print("You are old what is fun for you??") 
+# if age>40 and category=="fun":
+#     print("You are old what is fun for you??") def square(x):
+def square(x):
+    return x * x
+def apply_function(func, value):
+    return func(value)
+print(apply_function(square, 5))
