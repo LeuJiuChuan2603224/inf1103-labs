@@ -27,6 +27,19 @@ def add_product(inventory):
     inventory.append(new_product)
     print(f"Product added successfully!")
 
+"""Option3"""
+def update_stock(inventory):
+    product_id = input("Enter Product ID: ")
+    for product in inventory:
+        if product["id"] == product_id:
+            print("\nProduct Found:")
+            print(f"Name: {product['name']}\nStock: {product['stock']}\n")
+            new_stock = int(input(f"New Stock Quantity: "))
+            product["stock"] = new_stock
+            print("\nStock updated successfully!")
+            return
+    print("Product not found.")
+
 def menu():
     print("-" * 10 + "Menu" + "-" * 10)
     print("1. Display All Products")
@@ -46,7 +59,7 @@ while True:
     elif choice == "2":
          add_product(inventory)
     elif choice == "3":
-         False
+         update_stock(inventory)
     elif choice == "4":
          False
     elif choice == "5":
