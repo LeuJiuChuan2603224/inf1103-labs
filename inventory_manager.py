@@ -5,7 +5,7 @@ inventory = [
     {"id": "P002", "name": "Mouse", "price": 25.00, "stock": 40},
     {"id": "P003", "name": "Keyboard", "price": 45.00, "stock": 25}
 ]
-
+"""Option1"""
 def display_all():
     print("Current Inventory:")
     print("=" * 40)
@@ -15,6 +15,17 @@ def display_all():
         for i in inventory:
             print(f"ID: {i['id']}, Name: {i['name']}, Price: ${i['price']:.2f}, Stock: {i['stock']}")
     print("=" * 40)
+
+"""Option2"""
+def add_product(inventory):
+    print("Add New Product")
+    product_id = input("Product ID: ")
+    name = input("Product Name: ")
+    price = float(input("Price: "))
+    stock = int(input("Stock Quantity: "))
+    new_product = {"id": product_id, "name": name, "price": price, "stock": stock}
+    inventory.append(new_product)
+    print(f"Product added successfully!")
 
 def menu():
     print("-" * 10 + "Menu" + "-" * 10)
@@ -33,7 +44,7 @@ while True:
     if choice == "1":
         display_all()
     elif choice == "2":
-         False
+         add_product(inventory)
     elif choice == "3":
          False
     elif choice == "4":
