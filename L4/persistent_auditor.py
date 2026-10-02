@@ -22,7 +22,7 @@ def save_inventory(file, total, history):
     with open(file, "w") as file:
         file.write(str(total) + "\n")
         file.write(",".join(map(str, history)) + "\n")
-    print("Inventory saved.")
+    print("Order successfully saved to inventory.txt.")
 
 
 def get_valid_input():
