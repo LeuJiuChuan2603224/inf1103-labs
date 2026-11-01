@@ -25,7 +25,10 @@ except TypeError as error:
 print()
 
 # 4.2: shipping cost with different weights
-# light = PhysicalProduct("P2", "Picks", 5.00, 10, 1)
-# heavy = PhysicalProduct("P3", "Amp", 500.00, 2, 10)
-# print(light.calculate_shipping_cost())
-# print(heavy.calculate_shipping_cost())
+light = PhysicalProduct("P2", "Picks", 5.00, 10, 1)
+heavy = PhysicalProduct("P3", "Amp", 500.00, 2, 10)
+print(light.calculate_shipping_cost())
+print(heavy.calculate_shipping_cost())
+
+print(guitar.to_dict())
+print(operating_system.to_dict())
