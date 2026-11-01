@@ -14,3 +14,6 @@ class PhysicalProduct(Product):
         # The parent prints the common fields, the child only adds its own
         super().display_information()
         print(f"Weight: {self.__weight} kg")
+
+    def get_fulfilment_info(self):
+        return "This product requires physical shipping."

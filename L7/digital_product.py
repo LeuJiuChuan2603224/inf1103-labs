@@ -14,3 +14,5 @@ class DigitalProduct(Product):
         # The parent prints the common fields, the child only adds its own
         super().display_information()
         print(f"Download Size: {self.__download_size} MB")
+    def get_fulfilment_info(self):
+        return "This product is delivered digitally."
