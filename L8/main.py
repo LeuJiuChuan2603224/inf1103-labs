@@ -2,6 +2,7 @@ from supplier import Supplier
 from physical_product import PhysicalProduct
 from digital_product import DigitalProduct
 from inventory import Inventory
+from order import Order
 
 print("=== Section 2: Association ===")
 supplier = Supplier("S001", "Acme Ltd", "sales@acme.com")
@@ -26,3 +27,17 @@ print("In A after remove:", inventory_a.find_product("P001") is not None)
 laptop.display_information()
 inventory_b.add_product(laptop)
 print("Same object in B:", inventory_b.find_product("P001") is laptop)
+
+print("=== Section 4: Composition ===")
+order1 = Order("O001")
+order1.add_order_line(laptop, 2)
+order1.add_order_line(ebook, 1)
+order1.display_order()
+order2 = Order("O002")
+order2.add_order_line(laptop, 1)
+line_1 = order1.order_lines[0]
+line_2 = order2.order_lines[0]
+print("Same OrderLine?", line_1 is line_2)
+print("Same Product?", line_1.product is line_2.product)
+order1.remove_order_line("D001")
+order1.display_order()
