@@ -54,3 +54,12 @@ lsp_inventory = Inventory()
 lsp_inventory.add_product(laptop)
 lsp_inventory.add_product(ebook)
 lsp_inventory.display_all()
+
+print("=== Section 7: Polymorphism ===")
+shop = Inventory()
+shop.add_product(laptop)
+shop.add_product(ebook)
+
+for product in shop.get_products():
+    product.display_information()
+    print(product.get_fulfilment_info())
