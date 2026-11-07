@@ -3,6 +3,7 @@ from physical_product import PhysicalProduct
 from digital_product import DigitalProduct
 from inventory import Inventory
 from order import Order
+from product import Product
 
 print("=== Section 2: Association ===")
 supplier = Supplier("S001", "Acme Ltd", "sales@acme.com")
@@ -41,3 +42,15 @@ print("Same OrderLine?", line_1 is line_2)
 print("Same Product?", line_1.product is line_2.product)
 order1.remove_order_line("D001")
 order1.display_order()
+
+def show_product_details(product: Product) -> None:
+    product.display_information()
+    print(product.get_fulfilment_info())
+
+print("=== Section 6: LSP ===")
+show_product_details(laptop)
+show_product_details(ebook)
+lsp_inventory = Inventory()
+lsp_inventory.add_product(laptop)
+lsp_inventory.add_product(ebook)
+lsp_inventory.display_all()
