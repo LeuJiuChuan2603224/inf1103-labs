@@ -11,7 +11,7 @@ def load_products(path: str, inventory: Inventory, supplier: Supplier) -> None:
     except FileNotFoundError:
         print(f"Products file not found: {path}")
     else:
-        loaded = 0
+        loaded = 0 
         with file:
             reader = csv.reader(file)
             next(reader)  # skip the header row
