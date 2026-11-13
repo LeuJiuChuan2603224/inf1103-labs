@@ -8,6 +8,7 @@ from digital_product import DigitalProduct
 from inventory import Inventory
 from order import Order
 from product import Product
+from discount import StudentDiscount
 
 supplier = Supplier("S001", "Acme Ltd", "sales@acme.com")
 laptop = PhysicalProduct("P001", "Laptop", 1200.00, 10, 2.5, supplier)
@@ -31,3 +32,7 @@ print("Percentage discount total:", order3.calculate_total())
 order4 = Order("O004")   # no discount given
 order4.add_order_line(ebook, 10)
 print("No discount total:", order4.calculate_total())
+
+
+order3.set_discount(StudentDiscount())
+print("Student discount total:", order3.calculate_total())
