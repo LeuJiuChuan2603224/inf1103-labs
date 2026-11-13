@@ -14,5 +14,13 @@
         "stock": 22,
         "type": "digital",
         "download_size": 4096.0
+    },
+    {
+        "id": "2",
+        "name": "e",
+        "price": 12.5,
+        "stock": 4,
+        "type": "physical",
+        "weight": 3.0
     }
 ]

@@ -31,6 +31,17 @@ def save_inventory(inventory):
     with open("inventory.json", "w") as f:
         json.dump(data, f, indent=4)
 
+def get_positive_float(prompt: str) -> float:
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Please enter a number greater than zero.")
+                continue
+            return value
+        except ValueError:
+            print("Please enter a valid number, e.g. 12.50")
+
 """Option2"""
 def add_product(inventory, supplier):         # CHANGED: takes supplier
     print("Add New Product")
@@ -43,7 +54,7 @@ def add_product(inventory, supplier):         # CHANGED: takes supplier
         print("Product ID already exists.")
         return
     name = input("Product Name: ")
-    price = float(input("Price: "))
+    price = get_positive_float("Price: ")
     stock = int(input("Stock Quantity: "))
     if product_type == "1":
         weight = float(input("Weight (kg): "))

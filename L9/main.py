@@ -10,7 +10,7 @@ from order import Order
 from product import Product
 from discount import StudentDiscount
 from product_factory import ProductFactory
-
+from product_loader import load_products
 
 
 supplier = Supplier("S001", "Acme Ltd", "sales@acme.com")
@@ -60,3 +60,10 @@ try:
     order4.add_order_line(ebook, 0)
 except ValueError as error:
     print("Rejected:", error)
+
+
+
+print("=== Lab 9 Section 5: Load from CSV ===")
+csv_inventory = Inventory()
+load_products("product.csv", csv_inventory, laptop.supplier)
+csv_inventory.display_all()
