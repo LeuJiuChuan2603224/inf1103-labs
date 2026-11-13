@@ -3,16 +3,21 @@ from discount import BulkDiscount, PercentageDiscount
 from order import Order
 
 from supplier import Supplier
-from physical_product import PhysicalProduct
-from digital_product import DigitalProduct
+# from physical_product import PhysicalProduct
+# from digital_product import DigitalProduct
 from inventory import Inventory
 from order import Order
 from product import Product
 from discount import StudentDiscount
+from product_factory import ProductFactory
+
+
 
 supplier = Supplier("S001", "Acme Ltd", "sales@acme.com")
-laptop = PhysicalProduct("P001", "Laptop", 1200.00, 10, 2.5, supplier)
-ebook = DigitalProduct("D001", "Python eBook", 25.00, 100, 15.0,supplier)  
+# laptop = PhysicalProduct("P001", "Laptop", 1200.00, 10, 2.5, supplier)
+# ebook = DigitalProduct("D001", "Python eBook", 25.00, 100, 15.0,supplier)  
+laptop = ProductFactory.create("physical", "P001", "Laptop", 1200.00, 10, supplier, 2.5)
+ebook = ProductFactory.create("digital", "D001", "Python eBook", 25.00, 100, supplier, 15.0)
 
 print(NoDiscount().apply(250))            # 250
 print(PercentageDiscount(10).apply(250))  # 225.0
@@ -36,3 +41,7 @@ print("No discount total:", order4.calculate_total())
 
 order3.set_discount(StudentDiscount())
 print("Student discount total:", order3.calculate_total())
+
+# print("=== Lab 9 Section 3: Factory ===")
+# ProductFactory.create("service", "S001", "Installation", 30.00, 5, laptop.supplier)
+# print("This line runs?")
