@@ -45,3 +45,18 @@ print("Student discount total:", order3.calculate_total())
 # print("=== Lab 9 Section 3: Factory ===")
 # ProductFactory.create("service", "S001", "Installation", 30.00, 5, laptop.supplier)
 # print("This line runs?")
+print("=== Lab 9 Section 4: Validation ===")
+try:
+    ProductFactory.create("physical", "P900", "Bad Price", 0, 5, laptop.supplier, 1.0)
+except ValueError as error:
+    print("Rejected:", error)
+
+try:
+    ProductFactory.create("digital", "D900", "Bad Stock", 10.0, -3, laptop.supplier, 1.0)
+except ValueError as error:
+    print("Rejected:", error)
+
+try:
+    order4.add_order_line(ebook, 0)
+except ValueError as error:
+    print("Rejected:", error)
