@@ -1,0 +1,18 @@
+[
+    {
+        "id": "p1",
+        "name": "Guitar",
+        "price": 299.9,
+        "stock": 3,
+        "type": "physical",
+        "weight": 3.5
+    },
+    {
+        "id": "D1",
+        "name": "Game",
+        "price": 129.0,
+        "stock": 22,
+        "type": "digital",
+        "download_size": 4096.0
+    }
+]
